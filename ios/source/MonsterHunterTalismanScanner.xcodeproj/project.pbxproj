@@ -14,6 +14,7 @@
 		4927D27F1C361D47003711A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4927D27E1C361D47003711A3 /* Assets.xcassets */; };
 		4927D2821C361D47003711A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4927D2801C361D47003711A3 /* LaunchScreen.storyboard */; };
 		4927D28D1C361D48003711A3 /* MonsterHunterTalismanScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927D28C1C361D48003711A3 /* MonsterHunterTalismanScannerTests.swift */; };
+		5D5246CD81E0E5DFEDE1ABE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A85ED9B13ABFAB1C3A92699E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3074F270CA0F77A14FC0F51E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4927D2711C361D47003711A3 /* MonsterHunterTalismanScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonsterHunterTalismanScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4927D2741C361D47003711A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4927D2761C361D47003711A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		4927D2881C361D48003711A3 /* MonsterHunterTalismanScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonsterHunterTalismanScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4927D28C1C361D48003711A3 /* MonsterHunterTalismanScannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterHunterTalismanScannerTests.swift; sourceTree = "<group>"; };
 		4927D28E1C361D48003711A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A85ED9B13ABFAB1C3A92699E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBCA8156304083B528C531F5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5246CD81E0E5DFEDE1ABE3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +63,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33F6B9A0B08B62A89236F6E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A85ED9B13ABFAB1C3A92699E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4927D2681C361D47003711A3 = {
 			isa = PBXGroup;
 			children = (
 				4927D2731C361D47003711A3 /* MonsterHunterTalismanScanner */,
 				4927D28B1C361D48003711A3 /* MonsterHunterTalismanScannerTests */,
 				4927D2721C361D47003711A3 /* Products */,
+				F9D6502BCC310E2E5CFDF66A /* Pods */,
+				33F6B9A0B08B62A89236F6E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +114,15 @@
 			path = MonsterHunterTalismanScannerTests;
 			sourceTree = "<group>";
 		};
+		F9D6502BCC310E2E5CFDF66A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3074F270CA0F77A14FC0F51E /* Pods.debug.xcconfig */,
+				EBCA8156304083B528C531F5 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +130,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4927D2911C361D48003711A3 /* Build configuration list for PBXNativeTarget "MonsterHunterTalismanScanner" */;
 			buildPhases = (
+				30C8817B425E2D8AFDE28F47 /* Check Pods Manifest.lock */,
 				4927D26D1C361D47003711A3 /* Sources */,
 				4927D26E1C361D47003711A3 /* Frameworks */,
 				4927D26F1C361D47003711A3 /* Resources */,
+				4A2E055781F75C5557803D86 /* Embed Pods Frameworks */,
+				ACCC2C6BD13F73D0F9572A1C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +223,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30C8817B425E2D8AFDE28F47 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4A2E055781F75C5557803D86 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACCC2C6BD13F73D0F9572A1C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4927D26D1C361D47003711A3 /* Sources */ = {
@@ -331,6 +406,7 @@
 		};
 		4927D2921C361D48003711A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3074F270CA0F77A14FC0F51E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MonsterHunterTalismanScanner/Info.plist;
@@ -342,6 +418,7 @@
 		};
 		4927D2931C361D48003711A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBCA8156304083B528C531F5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MonsterHunterTalismanScanner/Info.plist;
@@ -394,6 +471,7 @@
 				4927D2931C361D48003711A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4927D2941C361D48003711A3 /* Build configuration list for PBXNativeTarget "MonsterHunterTalismanScannerTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +480,7 @@
 				4927D2961C361D48003711A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
