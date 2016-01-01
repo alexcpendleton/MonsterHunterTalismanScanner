@@ -30,7 +30,10 @@ class ViewController: UIViewController {
     }
     
     func run() {
-        let originalImage = UIImage(named: "SamplePhotos/SingleTalismanInverted03.JPG")
+        let imageName =
+            "SamplePhotos/SingleTalismanInverted03.JPG"
+//            "SamplePhotos/CroppedTalismans03 copy.JPG"
+        let originalImage = UIImage(named: imageName)
         let scaledSource = scaleImage(originalImage!, maxDimension: 640)
 
         let use = originalImage
@@ -62,7 +65,7 @@ class ViewController: UIViewController {
     
     func performImageRecognition(image: UIImage) {
         // 1
-        let tesseract = G8Tesseract(language: "jpn")
+        let tesseract = G8Tesseract(language: "mhxjpn")
         
         // 2
         //tesseract.language = "jpn"
@@ -71,11 +74,12 @@ class ViewController: UIViewController {
         //tesseract.engineMode = .TesseractCubeCombined
         tesseract.engineMode = .TesseractOnly
         // 4
-        tesseract.pageSegmentationMode = .SparseTextOSD
+        tesseract.pageSegmentationMode = .SparseText
         
         // 5
         tesseract.maximumRecognitionTime = 60.0
 
+        tesseract.setVariableValue("", forKey: "bazaar")
         // 6
         //UIGraphicsBeginImageContextWithOptions(bounds, NO, 1.0f)
 
@@ -83,9 +87,9 @@ class ViewController: UIViewController {
         let img = image.g8_blackAndWhite()
         tesseract.image = img
 
-        tesseract.charWhitelist = "弾薬節約盗み無効砲術攻撃ベルナ細菌学黒炎王爆破瓶追加裂傷属性耐性鈍器爆弾強化泡沫接撃瓶追加肉食剥ぎ取りチャンス護石王拡散弾追加耐寒寒冷適応調合数調合成功率連撃体術榴弾追加紅兜抜刀会心属性会心特殊会心会心強化だるま射法対防御DOWN防御重撃龍属性攻撃龍耐性食事属性攻撃属強瓶追加回避距離回避性能減気瓶追加達人溜め短縮運気剣術火属性攻撃火耐性狂撃耐性採取本気食いしん坊金雷公ガード性能ガード強化根性匠体力聴覚保護耐暑炎熱適応大雪主重撃弾強化野草知識英雄の盾ハチミツ腹減り氷属性攻撃氷耐性燼滅刃変則射撃KOココット効果持続跳躍節食装填数無心笛乗り茸食通常弾追加通常弾強化隻眼麻痺瓶追加麻痺散弾追加散弾強化観察眼貫通弾追加貫通弾強化毒毒瓶追加ポッケ研磨術底力強撃瓶追加精密射撃加護千里眼抜刀減気狩人速射逆上回復量回復速度反動装填速度岩穿荒鉤爪気配研ぎ師斬れ味納刀睡眠睡眠瓶追加矛砕高速設置闘魂減気攻撃気力回復スタミナ特殊攻撃気絶逆境号令采配痛撃雷属性攻撃雷耐性窮地捕獲運搬宝纏耐震無傷紫毒姫水属性攻撃水耐性気まぐれ白疾風広域風圧ユクモ1234567890+"
-        
-        
+        let uniqueChars = Set<String>(arrayLiteral: "離笛覚調心れ採睡令里動加刀観ユ宝沫追適火広地射化ナKト2学対本盾上雷矛采黒砕龍度闘風撃N効力設細泡鈍則御重法野いめま1剣復金逆斬能刃窮ル5眼磨氷燼石取の岩爆盗躍熱捕術拡纏紫ガ白散疾3痺0ー搬圧無置ツ9節匠聴り瓶86殊タ納気坊ド水会精O師知肉填数炎避狂跳だミハ短榴弾回ん耐識研ポ運ぐ強功絶通痛紅獲姫茸公傷W約率護ベ+コ剥隻毒果破菌D装ケモ裂眠常速攻人ク鉤草接7体大スッ千成特腹麻雪応狩滅薬寒冷号震味配穿王察食ぎ量み暑減る続根底砲変荒性乗兜雄達縮主持属ャ高防抜ン保連事魂域境チ反英貫し距4合爪溜密器")
+        tesseract.charWhitelist = uniqueChars.joinWithSeparator("")
+
         tesseract.recognize()
         
         // 7
@@ -95,14 +99,12 @@ class ViewController: UIViewController {
         print(results)
         print("#####end printed results#####")
         output.text = results
-        withBoxes.image = tesseract.imageWithBlocks(nil, drawText: true, thresholded: false)
+
+        let characterBoxes = tesseract.recognizedBlocksByIteratorLevel(G8PageIteratorLevel.Symbol)
+        withBoxes.image = tesseract.imageWithBlocks(characterBoxes, drawText: true, thresholded: false)
         // 8
         //removeActivityIndicator()
         
-        
-        //imageWithBlocks
-        //sourceResolution
-        //charWhitelist
     }
     
     func invertImage(target: UIImage) -> UIImage {
