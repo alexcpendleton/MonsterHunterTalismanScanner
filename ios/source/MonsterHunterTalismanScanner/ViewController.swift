@@ -29,9 +29,11 @@ class ViewController: UIViewController {
     }
     
     func run() {
-        let originalImage = UIImage(named: "SamplePhotos/TalismanDemo03.JPG")
-        let scaledSource = originalImage! // scaleImage(originalImage!, maxDimension: 640)
-        performImageRecognition(scaledSource)
+        let originalImage = UIImage(named: "SamplePhotos/CroppedTalismans03.JPG")
+        let scaledSource = scaleImage(originalImage!, maxDimension: 640)
+
+        let use = originalImage
+        performImageRecognition(use)
     }
     
     func scaleImage(image: UIImage, maxDimension: CGFloat) -> UIImage {
@@ -68,13 +70,14 @@ class ViewController: UIViewController {
         //tesseract.engineMode = .TesseractCubeCombined
         tesseract.engineMode = .TesseractOnly
         // 4
-        tesseract.pageSegmentationMode = .Auto
+        tesseract.pageSegmentationMode = .SparseTextOSD
         
         // 5
         tesseract.maximumRecognitionTime = 60.0
-        
+
         // 6
         tesseract.image = image.g8_blackAndWhite()
+
         tesseract.recognize()
         
         // 7
@@ -86,6 +89,11 @@ class ViewController: UIViewController {
         output.text = results
         // 8
         //removeActivityIndicator()
+        
+        
+        //imageWithBlocks
+        //sourceResolution
+        //charWhitelist
     }
 }
 
