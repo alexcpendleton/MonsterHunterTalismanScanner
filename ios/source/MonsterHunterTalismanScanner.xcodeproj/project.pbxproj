@@ -16,6 +16,7 @@
 		4927D28D1C361D48003711A3 /* MonsterHunterTalismanScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927D28C1C361D48003711A3 /* MonsterHunterTalismanScannerTests.swift */; };
 		4927D29E1C36215D003711A3 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 4927D29D1C36215D003711A3 /* tessdata */; };
 		4927D2A01C36233E003711A3 /* SamplePhotos in Resources */ = {isa = PBXBuildFile; fileRef = 4927D29F1C36233E003711A3 /* SamplePhotos */; };
+		4927D2A31C3635E6003711A3 /* WhitelistParser.js in Resources */ = {isa = PBXBuildFile; fileRef = 4927D2A21C3635E6003711A3 /* WhitelistParser.js */; };
 		5D5246CD81E0E5DFEDE1ABE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A85ED9B13ABFAB1C3A92699E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		4927D29D1C36215D003711A3 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		4927D29F1C36233E003711A3 /* SamplePhotos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SamplePhotos; sourceTree = "<group>"; };
 		4927D2A11C3625C3003711A3 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		4927D2A21C3635E6003711A3 /* WhitelistParser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = WhitelistParser.js; sourceTree = "<group>"; };
 		A85ED9B13ABFAB1C3A92699E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBCA8156304083B528C531F5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 				4927D2831C361D47003711A3 /* Info.plist */,
 				4927D27B1C361D47003711A3 /* MonsterHunterTalismanScanner.xcdatamodeld */,
 				4927D2A11C3625C3003711A3 /* Bridging.h */,
+				4927D2A21C3635E6003711A3 /* WhitelistParser.js */,
 			);
 			path = MonsterHunterTalismanScanner;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				4927D27F1C361D47003711A3 /* Assets.xcassets in Resources */,
 				4927D27A1C361D47003711A3 /* Main.storyboard in Resources */,
 				4927D2A01C36233E003711A3 /* SamplePhotos in Resources */,
+				4927D2A31C3635E6003711A3 /* WhitelistParser.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
