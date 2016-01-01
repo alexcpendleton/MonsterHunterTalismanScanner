@@ -1,2 +1,2 @@
-pod 'HTCoreImage'
 pod 'TesseractOCRiOS', '4.0.0'
+pod 'GPUImage-Goonbee', '~> 0.1'
