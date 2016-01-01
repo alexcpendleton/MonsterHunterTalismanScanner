@@ -10,5 +10,6 @@
 #define Bridging_h
 
 #import <TesseractOCR/TesseractOCR.h>
+#import <HTCoreImage/HTCoreImage.h>
 
 #endif /* Bridging_h */
