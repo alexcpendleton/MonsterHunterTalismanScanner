@@ -10,6 +10,6 @@
 #define Bridging_h
 
 #import <TesseractOCR/TesseractOCR.h>
-#import <HTCoreImage/HTCoreImage.h>
+#import <GPUImage-Goonbee/GPUImage.h>
 
 #endif /* Bridging_h */

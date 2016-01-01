@@ -1,13 +1,13 @@
 PODS:
-  - HTCoreImage (1.0.1)
+  - GPUImage-Goonbee (0.1.6.1)
   - TesseractOCRiOS (4.0.0)
 
 DEPENDENCIES:
-  - HTCoreImage
+  - GPUImage-Goonbee (~> 0.1)
   - TesseractOCRiOS (= 4.0.0)
 
 SPEC CHECKSUMS:
-  HTCoreImage: 986888b613bc7d0a3dde5bda654e4e15afedb911
+  GPUImage-Goonbee: 459a5a981cd4ed443cca5012226eea0a31692f74
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
 
 COCOAPODS: 0.39.0
