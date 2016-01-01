@@ -14,6 +14,8 @@
 		4927D27F1C361D47003711A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4927D27E1C361D47003711A3 /* Assets.xcassets */; };
 		4927D2821C361D47003711A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4927D2801C361D47003711A3 /* LaunchScreen.storyboard */; };
 		4927D28D1C361D48003711A3 /* MonsterHunterTalismanScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927D28C1C361D48003711A3 /* MonsterHunterTalismanScannerTests.swift */; };
+		4927D29E1C36215D003711A3 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 4927D29D1C36215D003711A3 /* tessdata */; };
+		4927D2A01C36233E003711A3 /* SamplePhotos in Resources */ = {isa = PBXBuildFile; fileRef = 4927D29F1C36233E003711A3 /* SamplePhotos */; };
 		5D5246CD81E0E5DFEDE1ABE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A85ED9B13ABFAB1C3A92699E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,9 @@
 		4927D2881C361D48003711A3 /* MonsterHunterTalismanScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonsterHunterTalismanScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4927D28C1C361D48003711A3 /* MonsterHunterTalismanScannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterHunterTalismanScannerTests.swift; sourceTree = "<group>"; };
 		4927D28E1C361D48003711A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4927D29D1C36215D003711A3 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		4927D29F1C36233E003711A3 /* SamplePhotos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SamplePhotos; sourceTree = "<group>"; };
+		4927D2A11C3625C3003711A3 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 		A85ED9B13ABFAB1C3A92699E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBCA8156304083B528C531F5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +99,8 @@
 		4927D2731C361D47003711A3 /* MonsterHunterTalismanScanner */ = {
 			isa = PBXGroup;
 			children = (
+				4927D29F1C36233E003711A3 /* SamplePhotos */,
+				4927D29D1C36215D003711A3 /* tessdata */,
 				4927D2741C361D47003711A3 /* AppDelegate.swift */,
 				4927D2761C361D47003711A3 /* ViewController.swift */,
 				4927D2781C361D47003711A3 /* Main.storyboard */,
@@ -101,6 +108,7 @@
 				4927D2801C361D47003711A3 /* LaunchScreen.storyboard */,
 				4927D2831C361D47003711A3 /* Info.plist */,
 				4927D27B1C361D47003711A3 /* MonsterHunterTalismanScanner.xcdatamodeld */,
+				4927D2A11C3625C3003711A3 /* Bridging.h */,
 			);
 			path = MonsterHunterTalismanScanner;
 			sourceTree = "<group>";
@@ -210,8 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4927D2821C361D47003711A3 /* LaunchScreen.storyboard in Resources */,
+				4927D29E1C36215D003711A3 /* tessdata in Resources */,
 				4927D27F1C361D47003711A3 /* Assets.xcassets in Resources */,
 				4927D27A1C361D47003711A3 /* Main.storyboard in Resources */,
+				4927D2A01C36233E003711A3 /* SamplePhotos in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +423,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexcpendleton.MonsterHunterTalismanScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = MonsterHunterTalismanScanner/Bridging.h;
 			};
 			name = Debug;
 		};
@@ -425,6 +436,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexcpendleton.MonsterHunterTalismanScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = MonsterHunterTalismanScanner/Bridging.h;
 			};
 			name = Release;
 		};
