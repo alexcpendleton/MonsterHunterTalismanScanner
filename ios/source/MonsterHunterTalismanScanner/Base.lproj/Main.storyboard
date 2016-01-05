@@ -34,7 +34,7 @@
                                     <action selector="runSignaled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GAS-ji-Rnu"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VCo-Wo-ejx" userLabel="Output Image With Boxes">
+                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VCo-Wo-ejx" userLabel="Output Image With Boxes">
                                 <rect key="frame" x="203" y="28" width="377" height="506"/>
                             </imageView>
                         </subviews>

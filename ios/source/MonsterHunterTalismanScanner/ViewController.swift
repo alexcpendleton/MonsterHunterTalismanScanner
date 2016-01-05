@@ -31,8 +31,8 @@ class ViewController: UIViewController {
     
     func run() {
         let imageName =
-        //"SamplePhotos/SingleTalismanInverted03.JPG"
-            "SamplePhotos/CroppedTalismans03 copy 2.JPG"
+        "SamplePhotos/SingleTalismanInverted03.JPG"
+        //    "SamplePhotos/CroppedTalismans03 copy 2.JPG"
         let originalImage = UIImage(named: imageName)
         let scaledSource = scaleImage(originalImage!, maxDimension: 640)
 
@@ -120,7 +120,7 @@ instance.setTessVariable("user_words_suffix", "user-words");
     func preprocess(target: UIImage) -> UIImage {
         var results = target
         
-        //results = target.g8_blackAndWhite()
+        results = target.g8_blackAndWhite()
         
         //results = GPUImageColorInvertFilter().imageByFilteringImage(results)
         
