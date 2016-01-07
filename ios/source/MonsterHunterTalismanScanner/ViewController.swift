@@ -31,8 +31,10 @@ class ViewController: UIViewController {
     
     func run() {
         let imageName =
-        "SamplePhotos/SingleTalismanInverted03.JPG"
+        //"SamplePhotos/SingleTalismanInverted03.JPG"
         //    "SamplePhotos/CroppedTalismans03 copy 2.JPG"
+        "SamplePhotos/SingleTalisman03.JPG"
+
         let originalImage = UIImage(named: imageName)
         let scaledSource = scaleImage(originalImage!, maxDimension: 640)
 
@@ -71,7 +73,7 @@ class ViewController: UIViewController {
         //tesseract.engineMode = .TesseractCubeCombined
         tesseract.engineMode = .TesseractOnly
         // 4
-        tesseract.pageSegmentationMode = .SparseText
+        tesseract.pageSegmentationMode = .SingleLine
         
         // 5
         tesseract.maximumRecognitionTime = 60.0
@@ -93,11 +95,9 @@ instance.setTessVariable("load_system_dawg", "F");
 instance.setTessVariable("load_freq_dawg", "F");
 instance.setTessVariable("user_words_suffix", "user-words");
 */
-        /*
-        tesseract.setVariableValue("F", forKey: "load_system_dawg")
-        tesseract.setVariableValue("F", forKey: "load_freq_dawg")
-        tesseract.setVariableValue("user-words", forKey: "user_words_suffix")
-        */
+//        edges_min_nonhole           1000
+  
+        
         
         
         tesseract.recognize()
@@ -113,6 +113,9 @@ instance.setTessVariable("user_words_suffix", "user-words");
         let characterBoxes = tesseract.recognizedBlocksByIteratorLevel(G8PageIteratorLevel.Symbol)
         withBoxes.image = tesseract.imageWithBlocks(characterBoxes, drawText: true, thresholded: false)
         // 8
+        
+        print("character choices")
+        print(tesseract.characterChoices)
         //removeActivityIndicator()
         
     }
@@ -120,16 +123,25 @@ instance.setTessVariable("user_words_suffix", "user-words");
     func preprocess(target: UIImage) -> UIImage {
         var results = target
         
-        results = target.g8_blackAndWhite()
-        
-        //results = GPUImageColorInvertFilter().imageByFilteringImage(results)
-        
-        let brightnessFilter = GPUImageBrightnessFilter()
-        brightnessFilter.brightness = 0.5
-        //results = brightnessFilter.imageByFilteringImage(results)
-        
         //results = target.g8_blackAndWhite()
         
+        let brightnessFilter = GPUImageBrightnessFilter()
+        brightnessFilter.brightness = 0.3
+        //results = brightnessFilter.imageByFilteringImage(results)
+        
+        
+        let levelsFilter = GPUImageLevelsFilter()
+        //results = target.g8_blackAndWhite()
+        
+        let curvesUrl = NSBundle.mainBundle().pathForResource("curves", ofType: "acv")
+        if curvesUrl != nil {
+            let curvesFilter = GPUImageToneCurveFilter(ACVURL: NSURL(fileURLWithPath: curvesUrl!))
+            results = curvesFilter.imageByFilteringImage(results)
+        }
+        
+        results = GPUImageColorInvertFilter().imageByFilteringImage(results)
+        
+        results = results.g8_grayScale()
         return results
     }
     
@@ -145,7 +157,7 @@ UIImage *filteredImage = [stillImageFilter imageByFilteringImage:inputImage];
 
         */
         let filter = GPUImageAdaptiveThresholdFilter()
-        //filter.blurRadiusInPixels = 2.0
+        //filter.blurRadiusInPixels = 2.0prerp
         
         return filter.imageByFilteringImage(target)
     }
