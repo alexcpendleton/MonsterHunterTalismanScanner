@@ -17,6 +17,7 @@
 		4927D29E1C36215D003711A3 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 4927D29D1C36215D003711A3 /* tessdata */; };
 		4927D2A01C36233E003711A3 /* SamplePhotos in Resources */ = {isa = PBXBuildFile; fileRef = 4927D29F1C36233E003711A3 /* SamplePhotos */; };
 		4927D2A31C3635E6003711A3 /* WhitelistParser.js in Resources */ = {isa = PBXBuildFile; fileRef = 4927D2A21C3635E6003711A3 /* WhitelistParser.js */; };
+		49477CD01C3E02DD006707FF /* curves.acv in Resources */ = {isa = PBXBuildFile; fileRef = 49477CCF1C3E02DD006707FF /* curves.acv */; };
 		49691C011C36451E001D837D /* EnglishJapaneseDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 49691C001C36451E001D837D /* EnglishJapaneseDictionary.json */; };
 		49691C031C3645B1001D837D /* JapaneseWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49691C021C3645B1001D837D /* JapaneseWords.txt */; };
 		5D5246CD81E0E5DFEDE1ABE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A85ED9B13ABFAB1C3A92699E /* libPods.a */; };
@@ -49,6 +50,7 @@
 		4927D29F1C36233E003711A3 /* SamplePhotos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SamplePhotos; sourceTree = "<group>"; };
 		4927D2A11C3625C3003711A3 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 		4927D2A21C3635E6003711A3 /* WhitelistParser.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = WhitelistParser.js; sourceTree = "<group>"; };
+		49477CCF1C3E02DD006707FF /* curves.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = curves.acv; sourceTree = "<group>"; };
 		49691C001C36451E001D837D /* EnglishJapaneseDictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EnglishJapaneseDictionary.json; sourceTree = "<group>"; };
 		49691C021C3645B1001D837D /* JapaneseWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JapaneseWords.txt; sourceTree = "<group>"; };
 		A85ED9B13ABFAB1C3A92699E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 		4927D2731C361D47003711A3 /* MonsterHunterTalismanScanner */ = {
 			isa = PBXGroup;
 			children = (
+				49477CCF1C3E02DD006707FF /* curves.acv */,
 				49691BFF1C364501001D837D /* Data */,
 				4927D29F1C36233E003711A3 /* SamplePhotos */,
 				4927D29D1C36215D003711A3 /* tessdata */,
@@ -237,6 +240,7 @@
 				4927D2821C361D47003711A3 /* LaunchScreen.storyboard in Resources */,
 				4927D29E1C36215D003711A3 /* tessdata in Resources */,
 				4927D27F1C361D47003711A3 /* Assets.xcassets in Resources */,
+				49477CD01C3E02DD006707FF /* curves.acv in Resources */,
 				4927D27A1C361D47003711A3 /* Main.storyboard in Resources */,
 				4927D2A01C36233E003711A3 /* SamplePhotos in Resources */,
 				49691C031C3645B1001D837D /* JapaneseWords.txt in Resources */,

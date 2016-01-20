@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, G8TesseractDelegate {
 
     @IBOutlet weak var output: UITextView!
     @IBOutlet weak var withBoxes: UIImageView!
@@ -68,12 +68,13 @@ class ViewController: UIViewController {
     func performImageRecognition(image: UIImage) {
         // 1
         let tesseract = G8Tesseract(language: "mhxjpn", configDictionary: nil, configFileNames: ["bazaar"], absoluteDataPath: nil, engineMode: .TesseractOnly, copyFilesFromResources: true)
+        tesseract.delegate = self
         
         // 3
         //tesseract.engineMode = .TesseractCubeCombined
         tesseract.engineMode = .TesseractOnly
         // 4
-        tesseract.pageSegmentationMode = .SingleLine
+        tesseract.pageSegmentationMode = .SparseText
         
         // 5
         tesseract.maximumRecognitionTime = 60.0
@@ -82,7 +83,7 @@ class ViewController: UIViewController {
 
         var img = image //invertImage(image)
         
-        img = preprocess(img)
+        //img = preprocess(img)
         
         tesseract.image = img
 
@@ -99,7 +100,6 @@ instance.setTessVariable("user_words_suffix", "user-words");
   
         
         
-        
         tesseract.recognize()
         
         // 7
@@ -111,11 +111,11 @@ instance.setTessVariable("user_words_suffix", "user-words");
         output.text = results
 
         let characterBoxes = tesseract.recognizedBlocksByIteratorLevel(G8PageIteratorLevel.Symbol)
-        withBoxes.image = tesseract.imageWithBlocks(characterBoxes, drawText: true, thresholded: false)
+        withBoxes.image = tesseract.imageWithBlocks(characterBoxes, drawText: true, thresholded: true)
         // 8
         
-        print("character choices")
-        print(tesseract.characterChoices)
+        //print("character choices")
+        //print(tesseract.characterChoices)
         //removeActivityIndicator()
         
     }
@@ -133,15 +133,23 @@ instance.setTessVariable("user_words_suffix", "user-words");
         let levelsFilter = GPUImageLevelsFilter()
         //results = target.g8_blackAndWhite()
         
+        results = results.g8_grayScale()
         let curvesUrl = NSBundle.mainBundle().pathForResource("curves", ofType: "acv")
         if curvesUrl != nil {
             let curvesFilter = GPUImageToneCurveFilter(ACVURL: NSURL(fileURLWithPath: curvesUrl!))
             results = curvesFilter.imageByFilteringImage(results)
         }
         
+        //
+        //
         results = GPUImageColorInvertFilter().imageByFilteringImage(results)
         
-        results = results.g8_grayScale()
+        let adaptiveFilter = GPUImageAdaptiveThresholdFilter()
+        adaptiveFilter.blurRadiusInPixels = 20
+        results = adaptiveFilter.imageByFilteringImage(results)
+
+        results = GPUImageColorInvertFilter().imageByFilteringImage(results)
+        
         return results
     }
     
@@ -160,5 +168,9 @@ UIImage *filteredImage = [stillImageFilter imageByFilteringImage:inputImage];
         //filter.blurRadiusInPixels = 2.0prerp
         
         return filter.imageByFilteringImage(target)
+    }
+    
+    func preprocessedImageForTesseract(tesseract: G8Tesseract!, sourceImage: UIImage!) -> UIImage! {
+        return preprocess(sourceImage)
     }
 }
